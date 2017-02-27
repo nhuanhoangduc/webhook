@@ -10,6 +10,20 @@ if ($method == 'GET' && $_GET['hub_mode'] == 'subscribe' && $_GET['hub_verify_to
 else if ($method == 'POST') {
     $object = file_get_contents("php://input"); 
     $rawinput = $object;  
-    file_put_contents("test.txt",$object);
+    file_put_contents("test.txt", $object);
+
+    $url = 'https://nhuanwebserver.herokuapp.com/';
+	$data = $object;
+
+	// use key 'http' even if you send the request to https://...
+	$options = array(
+		'http' => array(
+			'header'  => "Content-type: application/json\r\n",
+			'method'  => 'POST',
+			'content' => json_encode($data)
+		)
+	);
+	$context = stream_context_create($options);
+	$result = file_get_contents($url, false, $context);
 }//end hook
 ?>
