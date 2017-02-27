@@ -10,6 +10,6 @@ if ($method == 'GET' && $_GET['hub_mode'] == 'subscribe' && $_GET['hub_verify_to
 else if ($method == 'POST') {
     $object = file_get_contents("php://input"); 
     $rawinput = $object;  
-    
+    file_put_contents("test.txt",$object);
 }//end hook
 ?>
