@@ -1,0 +1,11 @@
+{
+    "name": "administrator/web-hook",
+    "description": "nothing",
+    "authors": [
+        {
+            "name": "Nhuan",
+            "email": "nhuan.hoangduc@outlook.com"
+        }
+    ],
+    "require": {}
+}
