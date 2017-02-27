@@ -12,7 +12,7 @@ else if ($method == 'POST') {
     $rawinput = $object;  
     file_put_contents("test.txt", $object);
 
-    $url = 'https://nhuanwebserver.herokuapp.com/';
+    $url = 'https://nhuanwebserver.herokuapp.com/webhook';
 	$data = $object;
 
 	// use key 'http' even if you send the request to https://...
