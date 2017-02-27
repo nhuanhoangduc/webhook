@@ -20,7 +20,7 @@ else if ($method == 'POST') {
 		'http' => array(
 			'header'  => "Content-type: application/json\r\n",
 			'method'  => 'POST',
-			'content' => json_encode($data)
+			'content' => $data
 		)
 	);
 	$context = stream_context_create($options);
